@@ -50,7 +50,7 @@ def generate_output(pipeline, X, y, eval_X, eval_ID, path):
     y_pred.replace(1, "SARCASM", inplace=True)
     y_pred.replace(0, 'NOT_SARCASM', inplace = True)
     eval_ID['prediction'] = y_pred
-    eval_ID.to_csv(path_or_buf = path + '\\answer.csv', index = False, header = False)
+    eval_ID.to_csv(path_or_buf = path + '\\answer.txt', index = False, header = False)
 
 
 def pipeline_builder(vectorizer, classifier, stop_words='english', ngram_range=(1, 1)):
