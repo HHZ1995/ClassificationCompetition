@@ -7,12 +7,14 @@ Created on Sun Nov 22 21:22:57 2020
 
 import pandas as pd
 import numpy as np
+import os
 
 #%%
 #load data
 data_raw = pd.read_json('data/train.jsonl', orient = 'columns', lines = True)
-data_raw.head()
-
+test_raw = pd.read_json('data/test.jsonl', orient = 'columns', lines = True)
+eval_X = test_raw['response']
+eval_ID = test_raw[['id']]
 #%%
 #data preprocessing, use response only
 X = data_raw['response']
@@ -42,28 +44,40 @@ def accuracy_summary(pipeline, X_train, y_train, X_test, y_test):
     report = classification_report(y_test, y_pred)#, target_names=['NOT_SARCASM','SARCASM'])
     return test_accuracy, train_accuracy, report
 
-def pipeline_builder(vectorizer, classifier, stop_words='english', ngram_range=(1, 3), ccp_alpha = 0.0):
+def generate_output(pipeline, X, y, eval_X, eval_ID, path):
+    sarcasm_fit = pipeline.fit(X, y)
+    y_pred = pd.Series(sarcasm_fit.predict(eval_X))
+    y_pred.replace(1, "SARCASM", inplace=True)
+    y_pred.replace(0, 'NOT_SARCASM', inplace = True)
+    eval_ID['prediction'] = y_pred
+    eval_ID.to_csv(path_or_buf = path + '\\answer.csv')
+
+
+def pipeline_builder(vectorizer, classifier, stop_words='english', ngram_range=(1, 1)):
     
     vectorizer.set_params(lowercase = True, 
                           stop_words=stop_words, 
                           ngram_range=ngram_range)
     
-    classifier.set_params(ccp_alpha = ccp_alpha)
-    
     checker_pipeline = Pipeline([('vectorizer', vectorizer),
                                  ('classifier', classifier)])
     
-    return accuracy_summary(checker_pipeline, X_train, y_train, X_test, y_test)
+    return checker_pipeline
 
 #%%
+#define vectorizer
 tfidf = TfidfVectorizer()
 
+#define classifier
 rf = RandomForestClassifier(n_estimators=300, 
                             criterion = 'entropy', 
-                            class_weight = 'balanced', 
+                            class_weight = 'balanced',
+                            ccp_alpha = 0.001,
                             random_state = 0)
 
-#%%
+#%% 
+#parameter tuning
+'''
 prun_range = np.arange(0, 0.005, 0.0005)
 trains = []
 tests = []
@@ -76,3 +90,8 @@ for p in prun_range:
 
 import matplotlib.pyplot as plt
 plt.plot(prun_range, trains, prun_range, tests)
+'''
+#%%
+path = os.getcwd()
+pipeline = pipeline_builder(vectorizer = tfidf, classifier = rf)
+generate_output(pipeline, X, y, eval_X, eval_ID, path)    
