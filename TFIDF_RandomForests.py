@@ -72,7 +72,7 @@ tfidf = TfidfVectorizer()
 rf = RandomForestClassifier(n_estimators=300, 
                             criterion = 'entropy', 
                             class_weight = 'balanced',
-                            ccp_alpha = 0.001,
+                            ccp_alpha = 0,
                             random_state = 0)
 
 #%% 
