@@ -104,5 +104,6 @@ plt.plot(prun_range, trains, prun_range, tests)
 '''
 #%%
 path = os.getcwd()
-pipeline = pipeline_builder(vectorizer = tfidf, classifier = rf)
-generate_output(pipeline, X, y, test_X, test_ID, path)    
+pipeline = pipeline_builder(vectorizer = tfidf, classifier = LR)
+generate_output(pipeline, X, y, test_X, test_ID, path)
+test_accuracy, train_accuracy, report = accuracy_summary(pipeline, X_train, y_train, X_eval, y_eval)
