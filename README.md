@@ -1,6 +1,6 @@
 # Text Classification Competition: Twitter Sarcasm Detection 
 
-## How to test models on your own?
+## How to test models on your PC?
 We performed three different models for this competition, machine learning model, BERT-based model and neural-network model. 
 You can test whichever you like by following the instructions respectively. 
 ## Machine Learning Model
