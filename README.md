@@ -31,4 +31,22 @@ twitter_2,NOT_SARCASM
 ...
 
 
+## BERT-base-uncased model
+***Pre-requisite:***
+- Tensorflow
+- Transformer
+- PyTorch
+- torchtext
+- BERT
+- cuda toolkit https://anaconda.org/anaconda/cudatoolkit (Hardware requirments: https://docs.anaconda.com/anaconda/user-guide/tasks/gpu-packages/) 
+- numpy
+- pandas
+- matplotlib
+- seaborn
+- sklearn
+
+***Running the script:***
+1. Install the **BERT-base-uncase-code** into your local computer (all the dataset is already prepared for this model)
+2. Run python **BERT_Model.py**
+3. The final models (**metrics.pt** and **model.pt**) and output prediction result (**anser.txt**) will be able to find in **result** folder
 
