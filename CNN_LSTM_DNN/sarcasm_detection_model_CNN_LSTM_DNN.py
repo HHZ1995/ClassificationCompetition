@@ -23,7 +23,7 @@ from keras.callbacks import EarlyStopping
 from keras.optimizers import Adam
 from keras.utils import np_utils
 from collections import defaultdict
-import src.data_processing.data_handler as dh
+import CNN_LSTM_DNN.data_processing.data_handler as dh
 from sklearn.model_selection import train_test_split
 
 
