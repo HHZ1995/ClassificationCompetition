@@ -30,6 +30,19 @@ twitter_1,SARCASM
 twitter_2,NOT_SARCASM  
 ...
 
+## Machine Learning Model
+***Pre-requisite:***
+- numpy
+- pandas
+- matplotlib
+- seaborn
+- sklearn
+
+***Running the script:***
+1. Clone the repository to your computer
+2. cd ClassificationCompetition/ML
+3. Run python **TFIDF_RandomForests.py**
+4. Output prediction result (**anser.txt**) will be able to find in **ClassificationCompetition** folder
 
 ## BERT-base-uncased model
 ***Pre-requisite:***
