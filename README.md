@@ -38,7 +38,7 @@ twitter_2,NOT_SARCASM
 - seaborn
 - sklearn
 
-***Running the script:***
+***Run the script:***
 1. Clone the repository to your computer
 2. cd ClassificationCompetition/ML
 3. Run python **TFIDF_RandomForests.py**
@@ -58,7 +58,7 @@ twitter_2,NOT_SARCASM
 - seaborn
 - sklearn
 
-***Running the script:***
+***Run the script:***
 1. Clone the **BERT-base-uncase-code** into your local computer (all the dataset is already prepared for this model)
 2. Run python **BERT_Model.py**
 (If you see this message in the console "Running this sequence through the model will result in indexing errors", this is just the warning, NOT actual error!)
