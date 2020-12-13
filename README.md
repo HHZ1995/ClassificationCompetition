@@ -50,10 +50,9 @@ You can test whichever you like by following the instructions respectively.
 
 ***Run the script:***
 1. Clone the repository
-2. Download following files from the link: https://drive.google.com/drive/folders/0B7C_0ZfEBcpRbDZKelBZTFFsV0E?usp=sharing
+2. Download following files from the link - https://drive.google.com/drive/folders/0B7C_0ZfEBcpRbDZKelBZTFFsV0E?usp=sharing, to the following directory: ClassificationCompetition/resource/text_model/weights
    - GoogleNews-vectors-negative300.bin
    - model.jsonhdf5
    - weights.05__.hdf5
-   to the following directory: ClassificationCompetition/resource/text_model/weights
 3. cd ClassificationCompetition/CNN_LSTM_DNN
 4. run Python sarcasm_detection_model_CNN_LSTM_DNN.py
