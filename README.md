@@ -64,3 +64,23 @@ twitter_2,NOT_SARCASM
 (If you see this message in the console "Running this sequence through the model will result in indexing errors", this is just the warning, NOT actual error!)
 3. The final models (**metrics.pt** and **model.pt**) and output prediction result (**anser.txt**) will be able to find in **result** folder
 
+## CNN+LSTM+DNN Model
+***Pre-requisite:***
+- nltk (TweetTokenizer)
+- Keras
+- Tensorflow
+- numpy
+- scipy
+- gensim (if you are using word2vec)
+- itertools
+- sklearn
+
+***Run the script:***
+1. Clone the repository
+2. Download following files from the link: https://drive.google.com/drive/folders/0B7C_0ZfEBcpRbDZKelBZTFFsV0E?usp=sharing
+   - GoogleNews-vectors-negative300.bin
+   - model.jsonhdf5
+   - weights.05__.hdf5
+   to the following directory: ClassificationCompetition/resource/text_model/weights
+3. cd ClassificationCompetition/CNN_LSTM_DNN
+4. run Python sarcasm_detection_model_CNN_LSTM_DNN.py
