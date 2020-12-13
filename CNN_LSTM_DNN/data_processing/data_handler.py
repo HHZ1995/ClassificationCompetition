@@ -7,7 +7,7 @@ from gensim.models.keyedvectors import KeyedVectors
 from gensim.models.wrappers import FastText
 import numpy
 from nltk.tokenize import TweetTokenizer
-import src.data_processing.glove2Word2vecLoader as glove
+import CNN_LSTM_DNN.data_processing.glove2Word2vecLoader as glove
 import itertools
 import os
 import pandas as pd
