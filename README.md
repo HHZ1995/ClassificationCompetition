@@ -1,37 +1,23 @@
 # Text Classification Competition: Twitter Sarcasm Detection 
 
-Dataset format:
+## How to test models on your PC?
+We performed three different models for this competition, machine learning model, BERT-based model and neural-network model. 
+You can test whichever you like by following the instructions respectively. 
+## Machine Learning Model
+***Pre-requisite:***
+- numpy
+- pandas
+- matplotlib
+- seaborn
+- sklearn
 
-Each line contains a JSON object with the following fields : 
-- ***response*** :  the Tweet to be classified
-- ***context*** : the conversation context of the ***response***
-	- Note, the context is an ordered list of dialogue, i.e., if the context contains three elements, `c1`, `c2`, `c3`, in that order, then `c2` is a reply to `c1` and `c3` is a reply to `c2`. Further, the Tweet to be classified is a reply to `c3`.
-- ***label*** : `SARCASM` or `NOT_SARCASM` 
+***Run the script:***
+1. Clone the repository to your computer
+2. cd ClassificationCompetition/ML
+3. Run python **TFIDF_RandomForests.py**
+4. Output prediction result (**anser.txt**) will be able to find in **ClassificationCompetition** folder
 
-- ***id***:  String identifier for sample. This id will be required when making submissions. (ONLY in test data)
-
-For instance, for the following training example : 
-
-`"label": "SARCASM", "response": "@USER @USER @USER I don't get this .. obviously you do care or you would've moved right along .. instead you decided to care and troll her ..", "context": ["A minor child deserves privacy and should be kept out of politics . Pamela Karlan , you should be ashamed of your very angry and obviously biased public pandering , and using a child to do it .", "@USER If your child isn't named Barron ... #BeBest Melania couldn't care less . Fact . 💯"]`
-
-The response tweet, "@USER @USER @USER I don't get this..." is a reply to its immediate context "@USER If your child isn't..." which is a reply to "A minor child deserves privacy...". Your goal is to predict the label of the "response" while optionally using the context (i.e, the immediate or the full context).
-
-***Dataset size statistics*** :
-
-| Train | Test |
-|-------|------|
-| 5000  | 1800 |
-
-For Test, we've provided you the ***response*** and the ***context***. We also provide the ***id*** (i.e., identifier) to report the results.
-
-***Submission Instructions*** : Please add a comma separated file named `answer.txt` containing the predictions on the test dataset. The file should have no headers and have exactly 1800 rows. Each row must have the sample id and the predicted label. For example:
-
-twitter_1,SARCASM  
-twitter_2,NOT_SARCASM  
-...
-
-
-## BERT-base-uncased model
+## BERT-base-uncased Model
 ***Pre-requisite:***
 - Tensorflow
 - Transformer
@@ -45,8 +31,28 @@ twitter_2,NOT_SARCASM
 - seaborn
 - sklearn
 
-***Running the script:***
+***Run the script:***
 1. Clone the **BERT-base-uncase-code** into your local computer (all the dataset is already prepared for this model)
 2. Run python **BERT_Model.py**
+(If you see this message in the console "Running this sequence through the model will result in indexing errors", this is just the warning, NOT actual error!)
 3. The final models (**metrics.pt** and **model.pt**) and output prediction result (**anser.txt**) will be able to find in **result** folder
 
+## CNN+LSTM+DNN Model
+***Pre-requisite:***
+- nltk (TweetTokenizer)
+- Keras
+- Tensorflow
+- numpy
+- scipy
+- gensim (if you are using word2vec)
+- itertools
+- sklearn
+
+***Run the script:***
+1. Clone the repository
+2. Download following files from the link - https://drive.google.com/drive/folders/0B7C_0ZfEBcpRbDZKelBZTFFsV0E?usp=sharing, to the following directory: ClassificationCompetition/resource/text_model/weights
+   - GoogleNews-vectors-negative300.bin
+   - model.jsonhdf5
+   - weights.05__.hdf5
+3. cd ClassificationCompetition/CNN_LSTM_DNN
+4. run Python sarcasm_detection_model_CNN_LSTM_DNN.py
