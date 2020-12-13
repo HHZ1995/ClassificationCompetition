@@ -1,5 +1,25 @@
 # Text Classification Competition: Twitter Sarcasm Detection 
-
+## Repository Description
+- /BERT-base-uncase-code:  
+Everything you need to test the BERT model
+- /CNN_LSTM_DNN:  
+Everything you need to test the neural-network-based model
+- /ML:  
+Everything you need to test the machine learning model
+- /data:  
+Raw Data
+- /resource:  
+Supportive documents for neural-network-based model
+- /CS 410 Text Information Systems Course Project Final Report.docx:  
+Final Report
+- /answer.txt：  
+Best output we have
+- /slides.pptx：  
+Slides, a brief version of Report
+## Important Notes (Read before testing the model):
+#### We highly recommend you to contact us for a live demo before you test the model on your own. Some pre-requisites are hard to meet which may lead to errors during the test. The testing process is also highly time-consuming. In order to better display our results and to save your time, please contact us via the following email address:  
+#### hh21@illinois.edu  
+#### Thank you for your understanding!
 ## How to test models on your PC?
 We performed three different models for this competition, machine learning model, BERT-based model and neural-network model. 
 You can test whichever you like by following the instructions respectively. 
