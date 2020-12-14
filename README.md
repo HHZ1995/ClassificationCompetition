@@ -19,6 +19,7 @@ Slides, a brief version of Report
 ## Important Notes (Read before testing the model):
 #### We highly recommend you to contact us for a live demo before you test the model on your own. Some pre-requisites are hard to meet which may lead to errors during the test. The testing process is also highly time-consuming. In order to better display our results and to save your time, please contact us via the following email address:  
 #### hh21@illinois.edu  
+#### Or you can this [live demo](https://drive.google.com/file/d/1FJJWRuQo2PQbYl3gvyjbv4T_RtujRe-c/view?ts=5fd59612).
 #### Thank you for your understanding!
 ## How to test models on your PC?
 We performed three different models for this competition, machine learning model, BERT-based model and neural-network model. 
